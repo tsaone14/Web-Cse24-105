@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Store Locations | Sparkles by Cath</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding: 20px;
+    }
+    .location-card {
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<div class="container mt-3 d-flex justify-content-between">
+    <button class="btn btn-outline-dark px-4 py-2 rounded-pill shadow-sm" onclick="goBack()">⬅ Back</button>
+    <button class="btn btn-dark px-4 py-2 rounded-pill shadow-sm" onclick="goHome()"> Home</button>
+  </div>
+
+  <script>
+    function goBack() {
+        window.history.back(); 
+    }
+
+    function goHome() {
+        window.location.href = "index.html"; 
+    }
+  </script>
+
+<body>
+  <div class="container">
+    <h2 class="text-center mb-4">Find Our Stores</h2>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-sm-12">
+        <label for="country" class="form-label">Select a Country:</label>
+        <select id="country" class="form-select" onchange="showLocations()">
+          <option value="default">-- Choose Country --</option>
+          <option value="botswana">Botswana</option>
+          <option value="south-africa">South Africa</option>
+          <option value="zambia">Zambia</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="locationResults" class="mt-4"></div>
+  </div>
+
+  <script>
+    function showLocations() {
+      const country = document.getElementById("country").value;
+      const resultDiv = document.getElementById("locationResults");
+
+      const locations = {
+        "botswana": [
+          { name: "Gaborone - Main Mall", map: "https://www.google.com/maps?q=Main+Mall,+Gaborone" },
+          { name: "Francistown - Nzano Centre", map: "https://www.google.com/maps?q=Nzano+Mall,+Francistown" },
+          { name: "Maun - Delta Plaza", map: "https://www.google.com/maps?q=Delta+Plaza,+Maun" }
+        ],
+        "south-africa": [
+          { name: "Johannesburg - Sandton Mall", map: "https://www.google.com/maps?q=Sandton+Mall,+Johannesburg" },
+          { name: "Cape Town - V&A Waterfront", map: "https://www.google.com/maps?q=V&A+Waterfront,+Cape+Town" },
+          { name: "Durban - Gateway Theatre of Shopping", map: "https://www.google.com/maps?q=Gateway+Theatre+of+Shopping,+Durban" }
+        ],
+        "zambia": [
+          { name: "Lusaka - Manda Hill Mall", map: "https://www.google.com/maps?q=Manda+Hill+Mall,+Lusaka" },
+          { name: "Ndola - Copperbelt Plaza", map: "https://www.google.com/maps?q=Copperbelt+Plaza,+Ndola" },
+          { name: "Livingstone - Victoria Mall", map: "https://www.google.com/maps?q=Victoria+Mall,+Livingstone" }
+        ]
+      };
+
+      if (locations[country]) {
+        resultDiv.innerHTML = `
+          <div class="location-card">
+            <h4>Available Locations in ${country.replace("-", " ").toUpperCase()}</h4>
+            <ul class="list-group mt-3">
+              ${locations[country].map(loc => `
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  ${loc.name}
+                  <a href="${loc.map}" target="_blank" class="btn btn-outline-primary btn-sm">View on Map</a>
+                </li>
+              `).join('')}
+            </ul>
+          </div>`;
+      } else {
+        resultDiv.innerHTML = "";
+      }
+    }
+  </script>
+</body>
+</html>

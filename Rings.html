@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rings | Sparkles by Cath</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/cb3ba006ce.js" crossorigin="anonymous"></script>
+  <style>
+    .ring-img {
+      height: 250px;
+      object-fit: cover;
+      width: 100%;
+    }
+    .price {
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+    }
+    .section-title {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+      color: #333;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body class="container py-4">
+  <h1 class="text-center mb-5">Rings Collection</h1>
+
+  <h2 class="section-title">Rings for Women</h2>
+
+  <h4>Gold</h4>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <img src="images/download (2).jpeg" class="ring-img" alt="Gold Ring">
+      <p class="price">P350</p>
+      <button class="btn btn-dark btn-sm" onclick="addToCart('Women Gold Ring', 350)">Add to Cart</button>
+    </div>
+    <div class="col-md-4">
+      <img src="images/Diamond North Star Ring.jpeg" class="ring-img" alt="Gold Ring 2">
+      <p class="price">P400</p>
+      <button class="btn btn-dark btn-sm" onclick="addToCart('Elegant Gold Ring', 400)">Add to Cart</button>
+    </div>
+  </div>
+ <div class="col-md-4">
+      <img src="images/download (3).jpeg" class="ring-img" alt="Gold Ring 2">
+      <p class="price">P350</p>
+      <button class="btn btn-dark btn-sm" onclick="addToCart('Elegant Gold Ring', 350)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="col-md-4">
+      <img src="images/download (3).jpeg" class="ring-img" alt="Gold Ring 2">
+      <p class="price">P320</p>
+      <button class="btn btn-dark btn-sm" onclick="addToCart('Elegant Gold Ring', 350)">Add to Cart</button>
+    </div>
+  </div>
+
+  <h4 class="mt-4">Silver</h4>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <img src="images/Moissanite 925 Sterling Silver Rhodium-Plated Ring.jpeg" class="ring-img" alt="Silver Ring">
+      <p class="price">P300</p>
+      <button class="btn btn-dark btn-sm" onclick="addToCart('Women Silver Ring', 300)">Add to Cart</button>
+    </div>
+  </div>
+
+  <h2 class="section-title">Rings for Men</h2>
+
+  <h4>Gold</h4>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <img src="images/149313be-0e7c-497c-af74-6eca5014baa3.jpeg" class="ring-img" alt="Men Gold Ring">
+      <p class="price">P450</p>
+      <button class="btn btn-dark btn-sm" onclick="addToCart('Men Gold Ring', 450)">Add to Cart</button>
+    </div>
+  </div>
+
+  <h4 class="mt-4">Silver</h4>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <img src="images/Rings.jpeg" class="ring-img" alt="Men Silver Ring">
+      <p class="price">P370</p>
+      <button class="btn btn-dark btn-sm" onclick="addToCart('Men Silver Ring', 370)">Add to Cart</button>
+    </div>
+  </div>
+
+  <h2 class="section-title">Wedding & Engagement Rings</h2>
+
+  <h4>Gold</h4>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <img src="images/Flower engagement ring, cherry blossom engagement ring, morganite engagement ring, twig engagement.jpeg" class="ring-img" alt="Wedding Gold Ring">
+      <p class="price">P800</p>
+      <button class="btn btn-dark btn-sm" onclick="addToCart('Wedding Gold Ring', 800)">Add to Cart</button>
+    </div>
+  </div>
+
+  <h4 class="mt-4">Silver</h4>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <img src="images/The design of a ring encompasses its overall shape and structure_ It can be a simple band.jpeg" class="ring-img" alt="Engagement Silver Ring">
+      <p class="price">P720</p>
+      <button class="btn btn-dark btn-sm" onclick="addToCart('Engagement Silver Ring', 720)">Add to Cart</button>
+    </div>
+  </div>
+
+  <script>
+    function addToCart(productName, price) {
+      alert(productName + " has been added to your cart for P" + price + "!");
+    }
+  </script>
+</body>
+</html>
